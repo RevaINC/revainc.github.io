@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hacked by DARQ</title>
+
+<style>
+
+  body {
+    background: #000;
+    color: #d700ff;
+    font-family: "Courier", "Courier New", monospace;
+    text-align: center;
+    padding-top: 8vh;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    transform-origin: top center;
+  }
+
+
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 600px) {
+    body {
+      zoom: 0.65;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    body {
+      zoom: 0.50;
+    }
+  }
+
+  @keyframes fadeIn { to { opacity: 1; } }
+
+
+  .glow {
+    text-shadow: 0 0 8px #d700ff, 0 0 16px #9b00ff, 0 0 32px #5e00ff;
+  }
+
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      linear-gradient(#ffffff03 1px, transparent 1px),
+      linear-gradient(90deg, #ffffff05 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+
+  .scanline {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.01) 2px,
+      transparent 3px,
+      transparent 6px
+    );
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 4px;
+    font-weight: normal;
+    transform: scaleY(0.9);
+    position: relative;
+    display: inline-block;
+    animation: glitchBlink 3s infinite;
+  }
+
+  @keyframes glitchBlink {
+    0%, 92%, 100% { text-shadow: 0 0 8px #d700ff; }
+    93% { text-shadow: 5px 0 15px #ff00ff; }
+    94% { text-shadow: -5px 0 15px #00ffff; }
+    95% { text-shadow: 0 0 8px #d700ff; }
+  }
+
+  .sub {
+    font-size: 1.2rem;
+ 
+
+
+
+
+   margin-top: 10px;
+    opacity: 0.8;
+  }
+
+  .ticker span {
+    display: block;
+    margin: 6px 0;
+    animation: flicker 4s infinite steps(20);
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 0.65; }
+  }
+
+
+  * {
+    user-select: none;
+  }
+
+</style>
+</head>
+
+<body>
+
+  <h1 class="glow">HACKED BY DARQ</h1>
+  <div class="sub glow">We Are Watching. We Are In.</div>
+
+  <div class="ticker glow">
+    <span style="font-size:1.3rem;">&gt; GREETZ : H04x, Sh𓁹gun, K0D3INON, FLAME, DarqLord, EFC, Waze,</span>
+    <span style="font-size:1.3rem;">&gt; This is an alert.</span>
+    <span class="blink" style="font-size:1.3rem;">&gt; Nigga just don't get hack amk</span>
+  </div>
+
+
+  <audio id="bgm" autoplay loop muted>
+    <source src="https://github.com/RevaINC/darq/raw/refs/heads/main/music.mp3" type="audio/mpeg">
+  </audio>
+
+<script>
+
+const bgm = document.getElementById("bgm");
+let unlocked = false;
+
+function unlockAudio() {
+  if (unlocked) return;
+  bgm.muted = false;
+  bgm.volume = 1.0;
+  bgm.play();
+  unlocked = true;
+}
+window.addEventListener("click", unlockAudio);
+window.addEventListener("keydown", unlockAudio);
+window.addEventListener("touchstart", unlockAudio);
+
+
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+document.addEventListener("dragstart", e => e.preventDefault());
+
+document.addEventListener("keydown", function(e) {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+    return false;
+  }
+});
+
+
+setInterval(() => {
+  if (window.outerWidth - window.innerWidth > 200 ||
+      window.outerHeight - window.innerHeight > 200) {
+    document.body.innerHTML = "";
+  }
+}, 500);
+
+</script>
+
+  <div class="scanline"></div>
+
+  <pre class="glow" style="margin-top:20px; font-size:14px; line-height:14px;">
+                              __
+                            .d$$b
+                          .' TO$;\
+                         /  : TP._;
+                        / _.;  :Tb|
+                       /   /   ;j$j
+                   _.-"       d$$$$
+                 .' ..       d$$$$;
+                /  /P'      d$$$$P. |\
+               /   "      .d$$$P' |\^"l
+             .'           `T$P^"""""  :
+         ._.'      _.'                ;
+      `-.-".-'-' ._.       _.-"    .-"
+    `.-" _____  ._              .-"
+   -(.g$$$$$$$b.              .'
+     ""^^T$$$P^)            .(:
+       _/  -"  /.'         /:/;
+    ._.'-'`-'  ")/         /;/;
+ `-.-"..--""   " /         /  ;
+.-" ..--""        -'          :
+..--""--.-"         (\      .-(\
+  ..--""              `-\(\/;`
+    _.                      :
+  </pre>
+
+</body>
+</html>
