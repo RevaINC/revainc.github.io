@@ -74,16 +74,23 @@
     box-shadow: 0 0 20px #d700ff;
   }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
+  /* Tablo stili ve yatay scroll */
+  #output {
+    overflow-x: auto;
     margin-top: 20px;
+  }
+
+  table {
+    width: max-content; /* çok sütunlu olursa scroll çıkar */
+    min-width: 100%;
+    border-collapse: collapse;
     background: rgba(0,0,0,0.7);
   }
 
   th, td {
     border: 1px solid #d700ff;
     padding: 8px;
+    white-space: nowrap; /* hücreleri tek satırda tutar */
   }
 
   th {
@@ -109,6 +116,7 @@
 
 <script>
 function parseCSV(text) {
+  // Satırları ayır ve her satırı virgülle ayır
   return text.trim().split(/\r?\n/).map(row => row.split(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/));
 }
 
